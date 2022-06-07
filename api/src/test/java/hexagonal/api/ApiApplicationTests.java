@@ -1,10 +1,10 @@
-package hexagonal.chat;
+package hexagonal.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ChatApplicationTests {
+class ApiApplicationTests {
 
     @Test
     void contextLoads() {
