@@ -19,7 +19,7 @@ public class Member {
     private String name;
 
     @Column(nullable = false, length = 30)
-    private String type;
+    private MemberType type;
 
     /**
      * 채팅 메시지 전송
@@ -37,5 +37,9 @@ public class Member {
         // Kafka 메시지 발송
         // Message 저장
         return true;
+    }
+
+    public enum MemberType {
+        USER ,COMPANY, ADMIN
     }
 }
