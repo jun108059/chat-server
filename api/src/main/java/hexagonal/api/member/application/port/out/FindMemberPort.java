@@ -1,4 +1,8 @@
 package hexagonal.api.member.application.port.out;
 
-public class FindMemberPort {
+import hexagonal.core.domain.jpa.MemberJpaEntity;
+
+public interface FindMemberPort {
+
+    MemberJpaEntity findMember(String email);
 }

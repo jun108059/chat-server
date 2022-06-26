@@ -2,5 +2,5 @@ package hexagonal.api.member.application.port.in;
 
 public interface RegisterMemberUseCase {
 
-    boolean registerMember();
+    Long registerMember(RegisterMemberCommand command);
 }

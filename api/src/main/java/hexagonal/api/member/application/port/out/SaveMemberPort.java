@@ -1,4 +1,7 @@
 package hexagonal.api.member.application.port.out;
 
-public class SaveMemberPort {
+import hexagonal.core.domain.jpa.MemberJpaEntity;
+
+public interface SaveMemberPort {
+    Long saveMember(MemberJpaEntity memberJpaEntity);
 }
