@@ -4,5 +4,7 @@ import hexagonal.core.domain.jpa.MemberJpaEntity;
 
 public interface FindMemberPort {
 
-    MemberJpaEntity findMember(String email);
+    MemberJpaEntity findMemberByEmail(String email);
+
+    MemberJpaEntity findMemberById(Long id);
 }
