@@ -24,14 +24,12 @@ public class RegisterMemberService implements RegisterMemberUseCase {
         }
         MemberJpaEntity memberJpaEntity = command.toJpaEntity();
         // 모델 상태 조작
-        Long memberId = saveMemberPort.saveMember(memberJpaEntity);
-        // 출력 값 반환
-        return memberId;
+        return saveMemberPort.saveMember(memberJpaEntity);
     }
 
     private boolean checkMemberEmailExists(String email) {
         try {
-            findMemberPort.findMember(email);
+            findMemberPort.findMemberByEmail(email);
         } catch (EntityNotFoundException e) {
             return true;
         }
