@@ -2,13 +2,17 @@
 
 [자소설 닷컴](https://jasoseol.com/) 채팅 구현하기
 
+## Architecture
+
+<img width="1776" alt="image" src="https://user-images.githubusercontent.com/42997924/177604570-52b3291c-3e19-4d13-b405-795185dbcab3.png">
+
 ## 요구사항
 
 1. 회원 시스템
-   - 개인 / 기업 / 관리자 
+   - 개인 / 기업 / 관리자
 2. 관리자가 채팅방 생성
    - 기업 기반 채팅방 생성이 가능해야 함
-3. 개인 회원(N) : 기업(1) 채팅 참여 
+3. 개인 회원(N) : 기업(1) 채팅 참여
    - 실시간 채팅 가능
 
 ### Task
@@ -20,8 +24,6 @@
 5. API 서버 개발
 6. Socket 서버 개발
 7. Kafka 파이프라인 구성
-
-
 
 ## gitmoji
 
