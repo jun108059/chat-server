@@ -25,6 +25,50 @@
 6. Socket 서버 개발
 7. Kafka 파이프라인 구성
 
+### UseCase
+
+1. 회원가입
+2. 회원 목록 조회
+3. 채팅방 생성
+4. 채팅 메시지 생성
+5. 채팅방 리스트 조회
+6. 채팅 메시지 조회
+
+### 패키지 구조
+
+```jsx
+chat
+|-- api
+    |-- member
+       |-- adapter
+       |   |-- in
+       |   |   |-- web
+       |   |       |--MemberController
+       |   |-- out
+       |   |   |-- persistence
+       |   |       |-- MemberPersistenceAdapter
+       |   |       |-- SpringDataAccountRepository
+       |-- application
+           |-- service
+           |   |-- GetMemberService
+           |   |-- RegisterMemberService
+           |-- port
+               |-- in
+               |   |-- GetMemberQuery
+               |   |-- RegisterMemberCommand
+               |   |-- RegisterMemberUseCase
+               |-- out
+               |   |-- FindMemberPort
+               |   |-- SaveMemberPort
+           
+|-- core
+   |-- domain
+   |   |-- Member
+   |   |-- Message
+   |-- exception
+   |   |-- ErrorCode
+```
+
 ## gitmoji
 
 > https://gitmoji.dev/
