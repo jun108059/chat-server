@@ -2,6 +2,10 @@
 
 [자소설 닷컴](https://jasoseol.com/) 채팅 구현하기
 
+## Architecture
+
+<img width="1776" alt="image" src="https://user-images.githubusercontent.com/42997924/177604570-52b3291c-3e19-4d13-b405-795185dbcab3.png">
+
 ## 요구사항
 
 1. 회원 시스템
@@ -29,8 +33,6 @@
 4. 채팅 메시지 생성
 5. 채팅방 리스트 조회
 6. 채팅 메시지 조회
-
-### Test 하는 방법
 
 ### 패키지 구조
 
