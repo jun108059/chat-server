@@ -1,0 +1,20 @@
+### 1. 회원가입 API (USER)
+POST http://localhost:8080/v1/member
+Content-Type: application/json
+
+{
+  "name": "박영준",
+  "email": "youngjun108059@gmail.com",
+  "type": "USER"
+}
+
+### 1-1.회원가입 API (COMPANY)
+POST http://localhost:8080/v1/member
+Content-Type: application/json
+
+{
+  "name": "영준 엔터",
+  "email": "yj@company.com",
+  "type": "COMPANY"
+}
+
