@@ -6,9 +6,11 @@ import hexagonal.api.room.application.port.out.FindRoomPort;
 import hexagonal.api.room.application.port.out.SaveRoomPort;
 import hexagonal.core.domain.jpa.RoomJpaEntity;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 
+@Service
 @RequiredArgsConstructor
 public class CreateRoomService implements CreateRoomUseCase {
 

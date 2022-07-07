@@ -6,9 +6,11 @@ import hexagonal.api.member.application.port.out.FindMemberPort;
 import hexagonal.api.member.application.port.out.UpdateMemberPort;
 import hexagonal.core.domain.jpa.MemberJpaEntity;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 
+@Service
 @RequiredArgsConstructor
 public class UpdateMemberService implements UpdateMemberUseCase {
 
