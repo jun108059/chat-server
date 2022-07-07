@@ -22,6 +22,7 @@ public class Member {
     private String email;
 
     @Column(nullable = false, length = 30)
+    @Enumerated(EnumType.STRING)
     private MemberType type;
 
     /**

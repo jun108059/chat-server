@@ -16,6 +16,8 @@ spring:
         format_sql: true
         show_sql: true
         use_sql_comments: true
+        hbm2ddl:
+          auto: create
 
 logging:
   level:
