@@ -1,24 +1,20 @@
 package hexagonal.api.member.adapter.in.web;
 
 import hexagonal.api.member.adapter.in.web.request.RegisterMemberReq;
-import hexagonal.api.member.adapter.in.web.request.UpdateMemberReq;
 import hexagonal.api.member.adapter.in.web.response.RegisterMemberResponse;
-import hexagonal.api.member.adapter.in.web.response.UpdateMemberResponse;
 import hexagonal.api.member.application.port.in.RegisterMemberCommand;
 import hexagonal.api.member.application.port.in.RegisterMemberUseCase;
-import hexagonal.api.member.application.port.in.UpdateMemberCommand;
-import hexagonal.api.member.application.port.in.UpdateMemberUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class MemberController {
+public class RegisterMemberController {
 
     private final RegisterMemberUseCase registerMemberUseCase;
-    private final UpdateMemberUseCase updateMemberUseCase;
-
 
     @PostMapping("/v1/member")
     ResponseEntity<RegisterMemberResponse> registerMember(@RequestBody RegisterMemberReq memberInfo) {
@@ -34,17 +30,4 @@ public class MemberController {
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("/v1/member")
-    ResponseEntity<UpdateMemberResponse> updateMember(@RequestBody UpdateMemberReq memberInfo) {
-        // ToDo 입력모델 Valid Check 예외 처리
-        UpdateMemberCommand command = new UpdateMemberCommand(
-                memberInfo.getId(),
-                memberInfo.getName(),
-                memberInfo.getEmail(),
-                memberInfo.getType());
-
-        Long memId = updateMemberUseCase.updateMember(command);
-        UpdateMemberResponse response = new UpdateMemberResponse(memId, memberInfo.getName());
-        return ResponseEntity.ok(response);
-    }
 }
