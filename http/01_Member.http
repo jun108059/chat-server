@@ -18,3 +18,15 @@ Content-Type: application/json
   "type": "COMPANY"
 }
 
+### 1-2.회원가입 API (ADMIN)
+POST http://localhost:8080/v1/member
+Content-Type: application/json
+
+{
+  "name": "관리자 A",
+  "email": "admin@admin.com",
+  "type": "ADMIN"
+}
+
+### 2. 회원 리스트 조회
+GET http://localhost:8080/v1/member/list
