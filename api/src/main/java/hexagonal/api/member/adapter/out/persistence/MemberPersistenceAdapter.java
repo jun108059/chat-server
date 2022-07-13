@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Component
@@ -20,6 +21,11 @@ class MemberPersistenceAdapter implements FindMemberPort, SaveMemberPort, Update
     public MemberJpaEntity findMemberById(Long id) {
         return memberRepository.findById(id)
                 .orElseThrow(EntityNotFoundException::new);
+    }
+
+    @Override
+    public List<MemberJpaEntity> findAllMembers() {
+        return memberRepository.findAll();
     }
 
     @Override
