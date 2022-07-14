@@ -1,0 +1,8 @@
+### 1. 채팅방 생성 API
+POST http://localhost:8080/v1/room
+Content-Type: application/json
+
+{
+  "companyId": "2",
+  "adminId": "3"
+}
