@@ -6,3 +6,8 @@ Content-Type: application/json
   "companyId": "2",
   "adminId": "3"
 }
+
+### 2. 채팅방 리스트 조회
+GET http://localhost:8080/v1/room/list
+
+### 3. 채팅방 즐겨찾기 등록 (To-Do)
