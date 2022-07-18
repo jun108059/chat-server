@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Component
@@ -19,6 +20,11 @@ class RoomPersistenceAdapter implements FindRoomPort, SaveRoomPort {
     public RoomJpaEntity findRoomByCompanyId(Long companyId) {
         return roomRepository.findByCompanyId(companyId)
                 .orElseThrow(EntityNotFoundException::new);
+    }
+
+    @Override
+    public List<RoomJpaEntity> findRoomList() {
+        return roomRepository.findAll();
     }
 
     @Override
