@@ -8,3 +8,6 @@ Content-Type: application/json
   "roomId": "1"
 }
 
+### 2. 채팅 메시지 조회 API
+GET http://localhost:8080/v1/chat/list/1
+
