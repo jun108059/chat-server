@@ -29,14 +29,14 @@ public class Member {
      * 채팅 메시지 전송
      *
      * @param roomId 방 번호
-     * @param messageContent 메시지 내용
+     * @param chatContent 메시지 내용
      * @return 메시지 전송 완료 여부
      */
-    public boolean sendMessage(Long roomId, String messageContent) {
-        Message message = Message.builder()
+    public boolean sendChat(Long roomId, String chatContent) {
+        Chat chat = Chat.builder()
                 .senderId(this.id)
                 .roomId(roomId)
-                .content(messageContent)
+                .content(chatContent)
                 .build();
         // Kafka 메시지 발송
         // Message 저장
