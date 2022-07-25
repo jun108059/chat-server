@@ -30,3 +30,12 @@ Content-Type: application/json
 
 ### 2. 회원 리스트 조회
 GET http://localhost:8080/v1/member/list
+
+### 3. 회원정보 업데이트
+PUT http://localhost:8080/v1/member/1
+Content-Type: application/json
+
+{
+  "name": "박영준 이름 변경",
+  "type": "USER"
+}
