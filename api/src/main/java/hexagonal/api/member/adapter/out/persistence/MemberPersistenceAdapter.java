@@ -42,7 +42,7 @@ class MemberPersistenceAdapter implements FindMemberPort, SaveMemberPort, Update
 
     @Override
     public Long updateMember(MemberJpaEntity memberJpaEntity) {
-        memberRepository.save(memberJpaEntity);
-        return null;
+        MemberJpaEntity saveEntity = memberRepository.save(memberJpaEntity);
+        return saveEntity.getId();
     }
 }

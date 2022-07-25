@@ -19,23 +19,22 @@ public class UpdateMemberService implements UpdateMemberUseCase {
 
     @Override
     public Long updateMember(UpdateMemberCommand command) {
-        // ID 존재 여부 검사
-        if (checkMemberExistsById(command.getId())) {
-            MemberJpaEntity memberJpaEntity = command.toJpaEntity();
-            return updateMemberPort.updateMember(memberJpaEntity);
+        MemberJpaEntity jpaEntity = checkMemberExistsById(command.getId());
+        if (jpaEntity != null) {
+            jpaEntity.setName(command.getName());
+            jpaEntity.setType(command.getMemberType());
+            return updateMemberPort.updateMember(jpaEntity);
         } else {
             // FixMe Custom Exception 처리하기
-            return null;
+            return 0L;
         }
     }
 
-    private boolean checkMemberExistsById(Long id) {
+    private MemberJpaEntity checkMemberExistsById(Long id) {
         try {
-            findMemberPort.findMemberById(id);
+            return findMemberPort.findMemberById(id);
         } catch (EntityNotFoundException e) {
-            return false;
+            return null;
         }
-
-        return true;
     }
 }
