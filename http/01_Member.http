@@ -39,3 +39,6 @@ Content-Type: application/json
   "name": "박영준 이름 변경",
   "type": "USER"
 }
+
+### 4. 회원 탈퇴
+DELETE http://localhost:8080/v1/member/1
