@@ -1,5 +1,6 @@
 package hexagonal.api.member.adapter.out.persistence;
 
+import hexagonal.api.member.application.port.out.DeleteMemberPort;
 import hexagonal.api.member.application.port.out.FindMemberPort;
 import hexagonal.api.member.application.port.out.SaveMemberPort;
 import hexagonal.api.member.application.port.out.UpdateMemberPort;
@@ -13,7 +14,8 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Component
-class MemberPersistenceAdapter implements FindMemberPort, SaveMemberPort, UpdateMemberPort {
+class MemberPersistenceAdapter implements FindMemberPort, SaveMemberPort, UpdateMemberPort,
+        DeleteMemberPort {
 
     private final MemberRepository memberRepository;
 
@@ -45,4 +47,12 @@ class MemberPersistenceAdapter implements FindMemberPort, SaveMemberPort, Update
         MemberJpaEntity saveEntity = memberRepository.save(memberJpaEntity);
         return saveEntity.getId();
     }
+
+    @Override
+    public Boolean deleteMember(Long id) {
+        memberRepository.deleteById(id);
+        return true;
+    }
+
+
 }
