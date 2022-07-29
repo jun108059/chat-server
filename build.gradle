@@ -59,5 +59,6 @@ project(':api') {
         implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.0'
         implementation 'mysql:mysql-connector-java:8.0.29'
         implementation 'org.springframework.boot:spring-boot-starter-validation'
+        implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
     }
 }
