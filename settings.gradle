@@ -1,3 +1,4 @@
 rootProject.name = 'chat'
 include 'core'
 include 'api'
+include 'socket'
