@@ -47,6 +47,7 @@ project(':core') {
         implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.0'
         implementation 'mysql:mysql-connector-java:8.0.29'
         implementation 'org.springframework.boot:spring-boot-starter-validation'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
     }
 }
 
@@ -60,5 +61,31 @@ project(':api') {
         implementation 'mysql:mysql-connector-java:8.0.29'
         implementation 'org.springframework.boot:spring-boot-starter-validation'
         implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
+    }
+}
+
+project(':socket') {
+    bootJar { enabled = true }
+    jar { enabled = false }
+
+    dependencies {
+        implementation project(':core')
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.0'
+        implementation 'mysql:mysql-connector-java:8.0.29'
+        implementation 'org.springframework.boot:spring-boot-starter-validation'
+        implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
+        implementation 'org.springframework.boot:spring-boot-starter-websocket'
+        implementation 'org.springframework.kafka:spring-kafka'
+
+        implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+        implementation 'org.springframework.boot:spring-boot-devtools'
+        implementation 'org.webjars.bower:bootstrap:4.3.1'
+        implementation 'org.webjars.bower:vue:2.5.16'
+        implementation 'org.webjars.bower:axios:0.17.1'
+        implementation 'com.google.code.gson:gson:2.8.0'
+
+        implementation 'org.springframework.boot:spring-boot-starter-webflux:2.7.2'
+
+        testImplementation 'org.springframework.kafka:spring-kafka-test'
     }
 }
