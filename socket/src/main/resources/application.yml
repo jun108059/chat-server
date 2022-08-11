@@ -1,0 +1,34 @@
+server:
+  port: 8082
+
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: chatting
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chatting?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    username: yj_park
+    password: 1234
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        use_sql_comments: true
+        hbm2ddl:
+          auto: update
+
+logging:
+  level:
+    org:
+      hibernate: info
+
+
