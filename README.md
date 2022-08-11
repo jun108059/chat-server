@@ -2,6 +2,8 @@
 
 [자소설 닷컴](https://jasoseol.com/) 채팅 구현하기
 
+- [Front-End Repo Link](https://github.com/jun108059/chat-front)
+
 ## Architecture
 
 <img width="1776" alt="image" src="https://user-images.githubusercontent.com/42997924/177604570-52b3291c-3e19-4d13-b405-795185dbcab3.png">
@@ -91,3 +93,4 @@ chat
 |   ✅   |    테스트    |   🐛   |    버그 해결    |
 |  ➕️  |  의존성 추가  |   🔀   |  브랜치 Merge  |
 |  ➖️  |  의존성 제거  |   🔖   |     릴리스     |
+|   🔧    |  설정 파일  | 🔊 | 로그 추가 삭제 |
